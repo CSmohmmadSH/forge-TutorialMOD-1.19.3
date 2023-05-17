@@ -1,6 +1,7 @@
 package net.CSmohmmadSH.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.CSmohmmadSH.tutorialmod.item.ModCreativeModeTabs;
 import net.CSmohmmadSH.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,52 +17,44 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
-public class TutorialMod
-{
-    // Define mod id in a common place for everything to reference
+public class TutorialMod {
     public static final String MOD_ID = "tutorialmod";
-    // Directly reference a slf4j logger
-
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public TutorialMod()
-    {
+    // Very Important Comment
+    public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        // Register the commonSetup method for modloading
 
         ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-        }
-
-    private void addCreative(CreativeModeTabEvent.BuildContents event)
-    {
-        if(event.getTab() == CreativeModeTabs.INGREDIENTS)
-        {
-            event.accept(ModItems.BLACK_OPAL);
-        }
+    private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
+    private void addCreative(CreativeModeTabEvent.BuildContents event) {
+        if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.BLACK_OPAL);
+            event.accept(ModItems.RAW_BLACK_OPAL);
+        }
 
+        if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB) {
+            event.accept(ModItems.BLACK_OPAL);
+            event.accept(ModItems.RAW_BLACK_OPAL);
+        }
+    }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            }
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+        }
     }
 }
