@@ -1,6 +1,7 @@
 package net.CSmohmmadSH.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.CSmohmmadSH.tutorialmod.block.ModBlocks;
 import net.CSmohmmadSH.tutorialmod.item.ModCreativeModeTabs;
 import net.CSmohmmadSH.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -26,6 +27,7 @@ public class TutorialMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -43,9 +45,15 @@ public class TutorialMod {
             event.accept(ModItems.RAW_BLACK_OPAL);
         }
 
+        if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+        }
+
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.RUBY);
+            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
         }
     }
 
