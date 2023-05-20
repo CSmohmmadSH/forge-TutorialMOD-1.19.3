@@ -43,10 +43,20 @@ public class TutorialMod {
         if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.RUBY);
         }
 
         if(event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+        }
+
+        if(event.getTab() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.BLACK_OPAL_ORE);
+            event.accept(ModBlocks.RUBY_BLOCK);
+            event.accept(ModBlocks.RUBY_ORE);
         }
 
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB) {
@@ -54,6 +64,12 @@ public class TutorialMod {
             event.accept(ModItems.RAW_BLACK_OPAL);
             event.accept(ModItems.RUBY);
             event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.BLACK_OPAL_ORE);
+            event.accept(ModBlocks.RUBY_BLOCK);
+            event.accept(ModBlocks.RUBY_ORE);
         }
     }
 
