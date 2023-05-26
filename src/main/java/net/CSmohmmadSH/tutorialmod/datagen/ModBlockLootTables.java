@@ -40,8 +40,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_EBONY_LOG.get());
         this.dropSelf(ModBlocks.EBONY_SAPLING.get());
 
+        this.dropSelf(ModBlocks.PINK_OAK_LOG.get());
+        this.dropSelf(ModBlocks.PINK_OAK_WOOD.get());
+        this.dropSelf(ModBlocks.PINK_OAK_PLANKS.get());
+        this.dropSelf(ModBlocks.PINK_OAK_SAPLING.get());
+
         this.add(ModBlocks.EBONY_LEAVES.get(), (block) ->
                 createLeavesDrops(block, ModBlocks.EBONY_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.add(ModBlocks.PINK_OAK_LEAVES.get(), (block) ->
+                createLeavesDrops(block, ModBlocks.PINK_OAK_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
     }
 

@@ -4,6 +4,7 @@ import net.CSmohmmadSH.tutorialmod.TutorialMod;
 import net.CSmohmmadSH.tutorialmod.block.custom.ModFlammableRotatedPillarBlock;
 import net.CSmohmmadSH.tutorialmod.item.ModItems;
 import net.CSmohmmadSH.tutorialmod.worldgen.tree.EbonyTreeGrower;
+import net.CSmohmmadSH.tutorialmod.worldgen.tree.PinkOakTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -63,6 +64,13 @@ public class ModBlocks {
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
                     .strength(5f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> PINK_OAK_LOG = registerBlock("pink_oak_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+                    .strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> PINK_OAK_WOOD = registerBlock("pink_oak_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+                    .strength(5f).requiresCorrectToolForDrops()));
+
     public static final RegistryObject<Block> EBONY_PLANKS = registerBlock("ebony_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
                     .strength(5f)) {
@@ -81,7 +89,45 @@ public class ModBlocks {
                     return 20;
                 }
             });
+
+    public static final RegistryObject<Block> PINK_OAK_PLANKS = registerBlock("pink_oak_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+                    .strength(5f)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 20;
+                }
+            });
+
     public static final RegistryObject<Block> EBONY_LEAVES = registerBlock("ebony_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 60;
+                }
+            });
+
+    public static final RegistryObject<Block> PINK_OAK_LEAVES = registerBlock("pink_oak_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
@@ -102,6 +148,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
             () -> new SaplingBlock(new EbonyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> PINK_OAK_SAPLING = registerBlock("pink_oak_sapling",
+            () -> new SaplingBlock(new PinkOakTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
 

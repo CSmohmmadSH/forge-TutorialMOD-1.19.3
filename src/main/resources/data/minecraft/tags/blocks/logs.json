@@ -4,6 +4,9 @@
     "tutorialmod:ebony_log",
     "tutorialmod:ebony_wood",
     "tutorialmod:stripped_ebony_log",
-    "tutorialmod:stripped_ebony_wood"
+    "tutorialmod:stripped_ebony_wood",
+
+    "tutorialmod:pink_oak_log",
+    "tutorialmod:pink_oak_wood"
   ]
 }

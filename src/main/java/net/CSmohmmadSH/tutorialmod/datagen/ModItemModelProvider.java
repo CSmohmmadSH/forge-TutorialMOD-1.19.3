@@ -25,6 +25,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUBY);
 
         saplingItem(ModBlocks.EBONY_SAPLING);
+        saplingItem(ModBlocks.PINK_OAK_SAPLING);
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

@@ -19,11 +19,19 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> EBONY_PLACED_KEY = createKey("ebony_placed");
 
+    public static final ResourceKey<PlacedFeature> PINK_OAK_PLACED_KEY = createKey("pink_oak_placed");
+
+
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, EBONY_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EBONY_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.EBONY_SAPLING.get()));
+
+        register(context, PINK_OAK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.PINK_OAK_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.PINK_OAK_SAPLING.get()));
+
+
     }
 
 

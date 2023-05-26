@@ -19,6 +19,9 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_OAK_KEY = registerKey("pink_oak");
+
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
         register(context, EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -27,7 +30,15 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.EBONY_LEAVES.get()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, PINK_OAK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.PINK_OAK_LOG.get()),
+                new StraightTrunkPlacer(5, 6, 3),
+                BlockStateProvider.simple(ModBlocks.PINK_OAK_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                new TwoLayersFeatureSize(1, 0, 2)).build());
     }
+
 
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

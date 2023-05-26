@@ -66,6 +66,14 @@ public class TutorialMod {
             event.accept(ModBlocks.STRIPPED_EBONY_LOG);
             event.accept(ModBlocks.STRIPPED_EBONY_WOOD);
             event.accept(ModBlocks.EBONY_SAPLING);
+
+            event.accept(ModBlocks.PINK_OAK_LEAVES);
+            event.accept(ModBlocks.PINK_OAK_LOG);
+            event.accept(ModBlocks.PINK_OAK_WOOD);
+            event.accept(ModBlocks.PINK_OAK_PLANKS);
+            event.accept(ModBlocks.PINK_OAK_SAPLING);
+
+
         }
 
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB) {
@@ -90,6 +98,12 @@ public class TutorialMod {
             event.accept(ModBlocks.STRIPPED_EBONY_LOG);
             event.accept(ModBlocks.STRIPPED_EBONY_WOOD);
             event.accept(ModBlocks.EBONY_SAPLING);
+
+            event.accept(ModBlocks.PINK_OAK_LEAVES);
+            event.accept(ModBlocks.PINK_OAK_LOG);
+            event.accept(ModBlocks.PINK_OAK_WOOD);
+            event.accept(ModBlocks.PINK_OAK_PLANKS);
+            event.accept(ModBlocks.PINK_OAK_SAPLING);
         }
     }
 
