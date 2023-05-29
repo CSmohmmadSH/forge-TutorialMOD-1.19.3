@@ -49,6 +49,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> RUBY_ORE = registerBlock("ruby_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
+    public static final RegistryObject<Block> DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(8f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
+    public static final RegistryObject<Block> NETHERRACK_RUBY_ORE = registerBlock("netherrack_ruby_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(4f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
+    public static final RegistryObject<Block> ENDSTONE_RUBY_ORE = registerBlock("endstone_ruby_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(9f).requiresCorrectToolForDrops(), UniformInt.of(2, 6)));
 
 
     public static final RegistryObject<Block> EBONY_LOG = registerBlock("ebony_log",

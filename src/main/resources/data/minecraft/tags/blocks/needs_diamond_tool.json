@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "tutorialmod:netherrack_black_opal_ore"
+    "tutorialmod:netherrack_black_opal_ore",
+
+    "tutorialmod:netherrack_ruby_ore"
   ]
 }

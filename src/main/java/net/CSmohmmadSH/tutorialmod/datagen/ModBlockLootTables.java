@@ -31,6 +31,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         add(ModBlocks.RUBY_ORE.get(),
                 (block) -> createOreDrop(ModBlocks.RUBY_ORE.get(), ModItems.RUBY.get()));
+        add(ModBlocks.DEEPSLATE_RUBY_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.DEEPSLATE_RUBY_ORE.get(), ModItems.RUBY.get()));
+        add(ModBlocks.NETHERRACK_RUBY_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.NETHERRACK_RUBY_ORE.get(), ModItems.RUBY.get()));
+        add(ModBlocks.ENDSTONE_RUBY_ORE.get(),
+                (block) -> createOreDrop(ModBlocks.ENDSTONE_RUBY_ORE.get(), ModItems.RUBY.get()));
+
 
 
         this.dropSelf(ModBlocks.EBONY_LOG.get());
