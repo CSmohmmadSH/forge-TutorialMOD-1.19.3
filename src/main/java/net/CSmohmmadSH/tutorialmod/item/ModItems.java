@@ -1,7 +1,10 @@
 package net.CSmohmmadSH.tutorialmod.item;
 
 import net.CSmohmmadSH.tutorialmod.TutorialMod;
+import net.CSmohmmadSH.tutorialmod.entity.ModEntities;
+import net.CSmohmmadSH.tutorialmod.item.custom.AnimatedItem;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,6 +20,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TIGER_SPAWN_EGG = ITEMS.register("tiger_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TIGER, 0xD57E36, 0x1D0D00,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> ANIMATED_ITEM = ITEMS.register("animated_item",
+            () -> new AnimatedItem(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

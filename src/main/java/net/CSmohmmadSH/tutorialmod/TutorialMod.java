@@ -2,8 +2,11 @@ package net.CSmohmmadSH.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.CSmohmmadSH.tutorialmod.block.ModBlocks;
+import net.CSmohmmadSH.tutorialmod.entity.ModEntities;
+import net.CSmohmmadSH.tutorialmod.entity.client.TigerRenderer;
 import net.CSmohmmadSH.tutorialmod.item.ModCreativeModeTabs;
 import net.CSmohmmadSH.tutorialmod.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,6 +31,8 @@ public class TutorialMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -82,6 +87,7 @@ public class TutorialMod {
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            event.accept(ModItems.ANIMATED_ITEM);
 
             event.accept(ModBlocks.BLACK_OPAL_BLOCK);
             event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
@@ -109,6 +115,12 @@ public class TutorialMod {
             event.accept(ModBlocks.PINK_OAK_WOOD);
             event.accept(ModBlocks.PINK_OAK_PLANKS);
             event.accept(ModBlocks.PINK_OAK_SAPLING);
+            event.accept(ModItems.TIGER_SPAWN_EGG);
+        }
+
+        if(event.getTab() == CreativeModeTabs.SPAWN_EGGS)
+        {
+            event.accept(ModItems.TIGER_SPAWN_EGG);
         }
     }
 
@@ -117,7 +129,7 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.TIGER.get(), TigerRenderer::new);
         }
     }
 }

@@ -2,6 +2,8 @@
   "item.tutorialmod.black_opal": "Black Opal",
   "item.tutorialmod.raw_black_opal": "Raw Black Opal",
   "item.tutorialmod.ruby": "Ruby",
+  "item.tutorialmod.tiger_spawn_egg": "Tiger Spawn Egg",
+  "item.tutorialmod.animated_item": "Animated Item",
 
   "block.tutorialmod.black_opal_block": "Block Of Black Opal",
   "block.tutorialmod.black_opal_ore": "Black Opal Ore",
@@ -28,6 +30,7 @@
   "block.tutorialmod.pink_oak_wood": "Pink_Oak Wood",
   "block.tutorialmod.pink_oak_leaves": "Pink_Oak Leaves",
   "block.tutorialmod.pink_oak_sapling": "Pink_Oak Sapling",
+
 
   "creativemodetab.tutorial_tab": "Tutorial Tab"
 }
