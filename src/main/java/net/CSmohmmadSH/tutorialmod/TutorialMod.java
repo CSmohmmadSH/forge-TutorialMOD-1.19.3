@@ -87,7 +87,6 @@ public class TutorialMod {
         if(event.getTab() == ModCreativeModeTabs.TUTORIAL_TAB) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
-            event.accept(ModItems.ANIMATED_ITEM);
 
             event.accept(ModBlocks.BLACK_OPAL_BLOCK);
             event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
@@ -116,6 +115,7 @@ public class TutorialMod {
             event.accept(ModBlocks.PINK_OAK_PLANKS);
             event.accept(ModBlocks.PINK_OAK_SAPLING);
             event.accept(ModItems.TIGER_SPAWN_EGG);
+            event.accept(ModItems.ANIMATED_ITEM);
         }
 
         if(event.getTab() == CreativeModeTabs.SPAWN_EGGS)
